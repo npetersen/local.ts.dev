@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Threshold Sports</title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Muli" />
+    <style>
+    	html, body {
+    		font-family:'muli', Verdana, sans-serif;
+    		color: #fff;
+    	}
+    	
+    	img.bg {
+    		/* Set rules to fill background */
+    		min-height: 100%;
+    		min-width: 1024px;
+    		/* Set up proportionate scaling */
+    		width: 100%;
+    		height: auto;
+    		/* Set up positioning */
+    		position: fixed;
+    		top: 0;
+    		left: 0;
+    	}
+    	
+    	@media screen and (max-width: 1024px) {
+    		img.bg {
+    			left: 50%;
+    			margin-left: -512px; 
+    		}
+    	}
+    	
+    	#content {
+    		width: 720px;
+    		height: 168px;
+    		text-align: center;
+    	}
+    	
+    	.centered {
+    		position: fixed;
+    		top: 50%;
+    		left: 50%;
+    		margin-top: -84px;
+    		margin-left: -360px;
+    	}
+    </style>
+  </head>
+  <body>
+  	<img src="bg-team-race.jpg" class="bg" />
+  	<div id="content" class="centered">
+  		<img src="ts-logo.png" />
+  		<p>2013 Site Coming Soon</p>
+  	</div>
+  	
+  </body>
+</html>

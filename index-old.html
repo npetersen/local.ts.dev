@@ -1,0 +1,746 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+	<title>Threshold Sports</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+	<link rel="stylesheet" type="text/css" href="css/jcarousel.css" />
+	<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
+	<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300,600,300italic' rel='stylesheet' type='text/css'>
+	
+	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src='http://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.3/jquery.backstretch.min.js?ver=20130207'></script> -->
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+	<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+	<script type="text/javascript" src="js/sorting.js"></script>
+	<script type="text/javascript" src="js/jquery.jcarousel.js"></script>
+	<script type="text/javascript" src="js/js.js"></script>
+	<script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+	<script type="text/javascript" src="js/waypoints.min.js"></script>
+	<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+	
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/respond.src.js"></script>
+	<![endif]-->
+	
+	<script type="text/javascript">
+		
+		$(document).ready(function(){	
+			
+			// $("#slide1").backstretch("images/action/ilw-race-2.jpg");
+			$("#ajax-contact-form").submit(function() {
+				var str = $(this).serialize();		
+				$.ajax({
+					type: "POST",
+					url: "contact_form/contact_process.php",
+					data: str,
+					success: function(msg) {
+						// Message Sent - Show the 'Thank You' message and hide the form
+						if(msg == 'OK') {
+							result = '<div class="notification_ok">Your message has been sent. Thank you!</div>';
+							$("#fields").hide();
+						} else {
+							result = msg;
+						}
+						$('#note').html(result);
+					}
+				});
+				return false;
+			});
+
+			$(window).resize(function() {
+				
+				$("#slide1").height($(window).height());
+				$("#slide3").height($(window).height());
+				$("#slide7").height($(window).height());
+
+				$('.threshold').css({
+					position:'absolute',
+					left: ($(window).width() - $('.className').outerWidth())/2,
+					top: ($(window).height() - $('.className').outerHeight())/2
+				});
+
+			});
+
+			$(window).resize();
+
+			$(function() {
+				$('a[rel*=teamModal]').leanModal({ top : 200, overlay: 0.75, closeButton: ".modal_close" });
+			});
+
+		});		
+	</script>
+	
+</head>
+
+<body>
+
+<div class="menu">	
+	<div class="container clearfix">
+
+		<div id="logo" class="fleft">
+			<a href="#"><img src="images/threshold-sports-logo-horiz.png"></a>
+		</div>
+		
+		<div id="nav" class="fright">
+			<ul class="navigation">
+				<li data-slide="1">Home</li>
+				<li data-slide="2">About</li>
+				<li data-slide="3">Threshold Gives</li>
+				<li data-slide="6">Threshold Sports</li>
+				<li data-slide="7">Threshold Events</li>
+				<!-- <li data-slide="10">Contact</li> -->
+			</ul>
+		</div>
+	
+	</div>
+</div>
+
+
+<div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
+	<div class="padding_slide1">
+		<div class="container clearfix">
+			<div id="content" class="grid_12">
+				<img src="images/threshold-sports-logo.png">
+				<h1>Health. <span>Community.</span> Impact.</h1>
+				<!--<h2>Nullam enim lectus, feugiat id iaculis eu, porttitor et tellus. Mauris congue ultrices massa in dapibus.Nulla sed neque sit amet sem ultrices</h2>-->
+				<a class="button first_btn" title="" data-slide="2"></a>
+				
+				<!--<div id="portf_btn">
+					<a class="button second_btn" title="" data-slide="4">View Portfolio</a>
+				</div>-->
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="slide" id="slide2" data-slide="2" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+		
+		<div id="content" class="grid_12">
+			<h3><span>About</span></h3>
+			<h4>We desire to influence and help others accomplish their goals of a healthy lifestyle through cycling and sports that are complimentary to it and we will always challenge ourselves and our teammates to be better; earning respect through our behavior on and off the bike, while adhering to the adage that you help yourself by helping others!</h4>
+		</div>
+		<div id="content" class="grid_12">
+			<!-- <p class="morbi_text">Morbi sit amet neque turpis, quis dictum nisi. Maecenas laoreet convallis auctor. Phasellus a dui non eros dignissim</p> -->
+			<p>ThresholdSports began through the desire to create a riding group that had shared goals and values. The founders wanted a group that truly gave back to the members and promoted health through the sport of cycling. Family and friends were soon included to strengthen the support system for members at each of the events. ThresholdSports has since evolved to include the entire community in our promotion of health and wellness.</p>
+			<p>Today ThresholdSports has evolved into an organization that still holds true to the original founders' vision. We now manage and sponsor road bike, mountain bike, cyclocross, and triathlon clubs, in addition to our involvement with local events that promote health, wellness, and safety.</p>
+			<p>Through ThresholdGives, the club members and event participants have an opportunity to give back to their designated charitable organization, fulfilling our mission to help others.</p>
+		</div>
+		<!-- <div id="content" class="grid_5 omega">
+			<div id="jcarousel">
+				<ul id="mycarousel" class="jcarousel-skin-tango">
+					<li>
+						<img src="images/about_img1.jpg" />
+					</li>
+					<li>
+						<img src="images/about_img2.jpg" />
+					</li>
+					<li>
+						<img src="images/about_img3.jpg" />
+					</li>
+					<div class="clear"></div>
+				</ul>
+			</div>
+		</div> -->
+		<div class="clear"></div>
+		<div id="content" class="grid_12">
+			<h5><span>meet our founders</span></h5>
+		</div>
+		<div class="clear"></div>
+		
+		<div class="grid_3 team_block">
+			<a href="#"><img src="images/founders/joel-rackham.jpg"></a>
+			<div class="team_inf">
+				<h4>Joel Rackham</h4>
+				<!-- <p>Founder, Sponsorship Director</p> -->
+				Founder, Sponsorship Director
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="grid_3 team_block">
+			<a href="#"><img src="images/founders/austin-scott.jpg"></a>
+			<div class="team_inf">
+				<h4>Austin Scott</h4>
+				<!-- <p>Photographer</p> -->
+				President
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="grid_3 team_block">
+			<a href="#"><img src="images/founders/clinton-mortley.jpg"></a>
+			<div class="team_inf">
+				<h4>Clinton Mortley</h4>
+				<!-- <p>Photographer</p> -->
+				Accountant/Treasurer
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="grid_3 team_block omega">
+			<a href="#"><img src="images/founders/darin-jensen.jpg"></a>
+			<div class="team_inf">
+				<h4>Darin Jensen</h4>
+				<!-- <p>Photographer</p> -->
+				Event Director
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+
+		<div class="clear"></div>
+
+		<div class="grid_3 team_block">
+			<a href="#"><img src="images/founders/nate-tippets.jpg"></a>
+			<div class="team_inf">
+				<h4>Nate Tippets</h4>
+				<!-- <p>Photographer</p> -->
+				Director IT, Board Member
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="grid_3 team_block">
+			<a href="#"><img src="images/founders/jeff-jones.jpg"></a>
+			<div class="team_inf">
+				<h4>Jeff Jones</h4>
+				<!-- <p>Photographer</p> -->
+				Event Director, Board Member
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="grid_3 team_block">
+			<a href="#"><img src="images/founders/justin-bingham.jpg"></a>
+			<div class="team_inf">
+				<h4>Justin Bingham</h4>
+				<!-- <p>Photographer</p> -->
+				Club Director
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="grid_3 team_block omega">
+			<a href="#"><img src="images/founders/kaytie-scott.jpg"></a>
+			<div class="team_inf">
+				<h4>Kaytie Scott</h4>
+				<!-- <p>Photographer</p> -->
+				Women's Sports Director, Board Member
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+
+		<div class="clear"></div>
+
+		<div id="content" class="grid_12">
+			<h5><span>meet the elite race team</span></h5>
+		</div>
+
+		<div class="clear"></div>
+
+		<div class="grid_3 team_block">
+			<a href="#clintMortleyBio" rel="teamModal"><img src="images/elite-team/clint-mortley.jpg"></a>
+			<div class="team_inf">
+				<a href="#clintMortleyBio" rel="teamModal"><h4>Clint Mortley</h4></a>
+				<!-- <p>Photographer</p> -->
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="grid_3 team_block">
+			<a href="#darrenGoffBio" rel="teamModal"><img src="images/elite-team/darren-goff.jpg"></a>
+			<div class="team_inf">
+				<a href="#darrenGoffBio" rel="teamModal"><h4>Darren Goff</h4></a>
+				<!-- <p>Photographer</p> -->
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="grid_3 team_block">
+			<a href="#leonBergantBio" rel="teamModal"><img src="images/elite-team/leon-bergant.jpg"></a>
+			<div class="team_inf">
+				<a href="#leonBergantBio" rel="teamModal"><h4>Leon Bergant</h4></a>
+				<!-- <p>Photographer</p> -->
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="grid_3 team_block omega">
+			<a href="#mannyCypersBio" rel="teamModal"><img src="images/elite-team/manny-cypers.jpg"></a>
+			<div class="team_inf">
+				<a href="#mannyCypersBio" rel="teamModal"><h4>Manny Cypers</h4></a>
+				<!-- <p>Photographer</p> -->
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+
+		<div class="clear"></div>
+
+		<div class="grid_3 team_block">
+			<a href="#rickyBangerterBio" rel="teamModal"><img src="images/elite-team/ricky-bangerter.jpg"></a>
+			<div class="team_inf">
+				<a href="#rickyBangerterBio" rel="teamModal"><h4>Ricky Bangerter</h4></a>
+				<!-- <p>Photographer</p> -->
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="grid_3 team_block">
+			<a href="#gilbertDucournuaBio" rel="teamModal"><img src="images/elite-team/gilbert-ducournua.jpg" /></a>
+			<div class="team_inf">
+				<a href="#gilbertDucournuaBio" rel="teamModal"><h4>Gilbert Ducournua</h4></a>
+				<!-- <p>Photographer</p> -->
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="grid_3 team_block">
+			<a href="#alisterRatcliffBio" rel="teamModal"><img src="images/elite-team/alister-ratcliff.jpg" /></a>
+			<div class="team_inf">
+				<a href="#alisterRatcliffBio" rel="teamModal"><h4>Alister Ratcliff</h4></a>
+				<!-- <p>Photographer</p> -->
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="grid_3 team_block omega">
+			<a href="#bryceOlsenBio" rel="teamModal"><img src="images/elite-team/bryce-olsen.jpg" /></a>
+			<div class="team_inf">
+				<a href="#bryceOlsenBio" rel="teamModal"><h4>Bryce Olsen</h4></a>
+				<!-- <p>Photographer</p> -->
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+
+		<div class="clear"></div>
+
+		<div class="grid_3 team_block">
+			
+		</div>
+		<div class="grid_3 team_block">
+			<a href="#bransonYantesBio" rel="teamModal"><img src="images/elite-team/branson-yantes.jpg" /></a>
+			<div class="team_inf">
+				<a href="#bransonYantesBio" rel="teamModal"><h4>Branson Yantes</h4></a>
+				<!-- <p>Photographer</p> -->
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="grid_3 team_block">
+			<a href="#ajTurnerBio" rel="teamModal"><img src="images/elite-team/aj-turner.jpg" /></a>
+			<div class="team_inf">
+				<a href="#ajTurnerBio" rel="teamModal"><h4>A.J. "Cutie Pie" Turner</h4></a>
+				<!-- <p>Photographer</p> -->
+				<ul class="team_soc">
+					<!-- <li><a href="#" class="soc1"></a></li>
+					<li><a href="#" class="soc2"></a></li>
+					<li><a href="#" class="soc3"></a></li>
+					<li><a href="#" class="soc4"></a></li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="grid_3 team_block omega">
+
+		</div>
+
+	</div>
+</div>
+
+
+
+<div class="slide" id="slide3" data-slide="3" data-stellar-background-ratio="0.5">
+	<div class="padding_slide3">
+		<div class="container clearfix">
+		
+			<div id="content" class="grid_12">
+				<img src="images/threshold-gives-logo.png" />
+				<h1>Love. <span>Live.</span> Give.</h1>
+				<p>ThresholdGives is a non-profit organization designed to promote and support cycling, triathlon, running, and health events that raise awareness while raising funds for charitable causes. We simplify the process for event organizers by supporting their event and providing one contact for all of their charitable donations from participants.</p>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+
+<div class="slide" id="slide6" data-slide="6" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+		
+		<div id="content" class="grid_12">
+			<h3><span>supported clubs</span></h3>
+			<!-- <h4>Nullam luctus lacus in massa feugiat venenatis. Morbi a lorem mauris. Nam egestas ligula dignissim justo ullamcorper viverra.</h4> -->
+		</div>
+		
+		<div class="clear"></div>
+		
+		<div class="grid_12">
+			<a href="http://teamintermountainlivewell.org" class="serv_inf">
+				<!-- <img class="serv_icon" src="images/icon1.png" />
+				<img class="serv_icon_h" src="images/icon1_h.png" /> -->
+				<img src="images/ILW-logo-700x275.png" />
+				<iframe width="700" height="394" src="//www.youtube.com/embed/ALmcmAU-lqQ?rel=0" frameborder="0" style="margin: 20px 0 20px 0;" allowfullscreen></iframe>
+				<p>Team Intermountain<sup>&reg;</sup> LiVe Well</p>
+				Team Intermountain LiVe Well, presented by Bountiful Bicycle, is a road cycling and triathlon group with 300+ members from Park City to Logan, Utah. This club provides an environment for beginners, recreational, advanced, and triathlon participants to enjoy their sport in a safe, fun, and supportive way. The club has many benefits that are free to members, including: weekly rides, member centuries, etc.
+				<div class="clear"></div>
+			</a>
+		</div>
+
+		<div class="clear"></div>
+
+		<!-- <div class="grid_12">
+			<a href="http://www.bountifulbicycle.com" class="serv_inf">
+				<img src="images/bountiful-bicycle-logo-700x225.png" />
+				<p>Bountiful Bicycle Racing</p>
+				Bountiful Bicycle Racing, presented by ThresholdSports, is a mountain bike and cyclocross racing team with 40+ members, primarily based in Davis and Salt Lake County. This group is open to members of all skill levels, and is focused on developing individuals to compete in mountain bike and cyclocross events.
+				<div class="clear"></div>
+			</a>
+		</div> -->
+
+		<!-- <div class="grid_6">
+			<a href="#" class="serv_inf">
+				<img class="serv_icon" src="images/icon3.png" />
+				<img class="serv_icon_h" src="images/icon3_h.png" />
+				<p>Built with love</p>
+				Nullam cursus pellentesque fermentum. Suspendisse consequat elit malesuada metus cursus tristique. Integer in sapien eu elit
+				<div class="clear"></div>
+			</a>
+		</div>
+		<div class="grid_6 omega">
+			<a href="#" class="serv_inf">
+				<img class="serv_icon" src="images/icon4.png" />
+				<img class="serv_icon_h" src="images/icon4_h.png" />
+				<p>Twitter Bootstrap</p>
+				Nullam cursus pellentesque fermentum. Suspendisse consequat elit malesuada metus cursus tristique. Integer in sapien eu elit
+				<div class="clear"></div>
+			</a>
+		</div> -->
+
+		<div class="clear"></div>
+	
+	</div>
+</div>
+
+
+<div class="slide" id="slide7" data-slide="7" data-stellar-background-ratio="0.5">
+
+	<div class="padding_slide3">
+		<div class="container clearfix">
+		
+			<div id="content" class="grid_12">
+				<img src="images/threshold-events-logo.png" />
+				<h1>Challenge. <span>Reach.</span> Exceed.</h1>
+				<p>The ThresholdEvents organization is designed to support, promote, and manage events that challenge individuals to exceed their personal fitness thresholds. Each event provides a challenging environment that welcomes participants of all skill levels to realize their potential. Our events are designed to be enjoyed by everyone involved; helping participants excel while their support network enjoys the event through other fun activities.</p>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+
+
+<!-- <div class="slide" id="slide10" data-slide="10" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+		
+		<div id="content" class="grid_12">
+			<h3><span>contact</span></h3>
+			<h4>Proin eu libero id erat accumsan vehicula ut in diam. Nunc feugiat tempor orci id viverra. Sed et neque quam. Maecenas posuere sapien at ante accumsan blandit commodo velit volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere</h4>
+		</div>
+		<div class="clear"></div>
+		<div id="contact_block_rel">
+			<div class="grid_5">
+				<div class="contact_form">  
+					<div id="note"></div>
+					<div id="fields">
+						<form id="ajax-contact-form" action="">
+							<input type="text" name="name" value="" placeholder="Name" />
+							<input type="text" name="subject" value="" placeholder="Phone" />
+							<input type="text" name="email" value="" placeholder="Email" />
+							<textarea name="message" id="message" placeholder="Message"></textarea>
+							<div class="clear"></div>
+							<input type="reset" class="contact_btn" value="Clear form" />
+							<input type="submit" class="contact_btn" value="Send" />
+							<div class="clear"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="grid_4 contact_det_block">
+				<h5>contact details</h5>
+				<p>Ut tincidunt, erat eu pulvinar molestie, justo nisl pharetra erat, sit amet malesuada diam turpis cursus mauris. Donec ac tempor libero.</p>
+				<p>Proin sit amet sollicitudin ante. Donec sodales, metus non congue aliquam, neque mauris suscipit sapien, a ultrices lectus mauris vel ipsum. Cras</p>
+				<ul class="foot_block_intouch">
+					<li class="touch_phone"><p>(+1) 245 5462 252</p></li>
+					<li class="touch_clock"><p>Mon - Sat 9:00am - 6:00 pm</p></li>
+					<li class="touch_mail"><a href="mailto:support@lorem.com">support@lorem.com</a></li>
+					<li class="touch_site"><a href="#">www.lorem.com</a></li>
+					<li class="touch_adress"><p>3301 Lorem Ipsum, Dolor Sit Amet St</p></li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	<div id="map_block"><iframe width="100%" height="722" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=los+angeles&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=53.080379,114.169922&amp;ie=UTF8&amp;hq=&amp;hnear=Los+Angeles,+California&amp;ll=34.052234,-118.243685&amp;spn=0.003427,0.006968&amp;t=m&amp;z=14&amp;output=embed"></iframe></div>
+	
+</div> -->
+
+
+<div id="footer">
+	<div class="container clearfix">
+		<div class="copyright">Threshold Gives &copy;2013 | Presented By Threshold Gives</div>
+		<div id="back_top"><a class="button" title="" data-slide="1">back to top</a></div>
+	</div>
+</div>
+
+
+<div id="ajTurnerBio" class="teamBio">
+	<div class="teamBioHeader">
+		<h4>A.J. "Cutie Pie" Turner</h4>
+		<a class="modal_close"></a>
+	</div>
+	<div class="teamBioBody">
+		<p>A.J. is from Des Moines, Iowa and has made an immediate positive impact on the team with his great attitude and solid team performance.  As a Crit specialist from the mid-West United States, he is quickly strengthening his climbing abilities to ensure he continues to be a factor at the NRC level races. With his “skies out, thighs out” attitude, he is never shy to roll-up his bib shorts and jersey sleeves and put in the miles when the sun is shining.</p>
+		<p>Top Career Highlights:</p>
+		<ul>
+			<li>1st 2013 Grinnel Twilight Criterium (P/1/2)</li>
+			<li>6th 2014 Boise Twilight Criteriem (P/1/2)</li>
+			<li>11th 2014 Cascade Classic Criterium (CAT2)</li>
+		</ul>
+	</div>
+</div>
+
+
+<div id="clintMortleyBio" class="teamBio">
+	<div class="teamBioHeader">
+		<h4>Clint Mortley</h4>
+		<a class="modal_close"></a>
+	</div>
+	<div class="teamBioBody">
+		<p>Clint Mortley is a fun loving powerhouse from Albuquerque NM. In 2011 when he first entered into competitive cycling as a CAT3, Clint won the Pro/1/2/3 category of one of Utah’s premier road races, LOTOJA Classic. He rode 206 miles over several mountain passes wearing some cut off jeans and a department store jersey to take the win. (The cutoffs may be an exaggeration, but the win is not.) He has come along way since 2011, and in 2013 returned to win the same race as a CAT1. He continues to develop as a force within the peloton, with many local race wins. With his positive attitude, GSD motto, and ability to push hundreds of watts for an extended period of time, he is an invaluable asset to the team as they start to mix it up at the NRC races in the Western United States.</p>
+		<p>Top Career Highlights:</p>
+		<ul>
+			<li>1st Lotoja Classic (2011 & 2013)</li>
+			<li>1st Tour of the Depot Classic</li>
+			<li>1st Sugarhouse Criterium</li>
+		</ul>
+	</div>
+</div>
+
+<div id="darrenGoffBio" class="teamBio">
+	<div class="teamBioHeader">
+		<h4>Darren Goff</h4>
+		<a class="modal_close"></a>
+	</div>
+	<div class="teamBioBody">
+		<p>Darren Goff is from Pleasant View, UT. Darren is an Elite Masters racer with many local successes, while still having strong performances in large NRC races. He started competitive cycling slightly later in life, but has proved to be an invaluable asset to the team. Darren has a full-time job, wife and kids, and still finds time to compete against some of the top professional cyclist in the nation. His ability to balance life alongside racing and training is truly admirable. He is a calm and collected rider that knows how to play his cards right, this allows him to find his way to many podiums.</p>
+		<p>Top Career Highlights:</p>
+		<ul>
+			<li>1st-Tax Day Circuit Race</li>
+			<li>1st-Wildcat Rally Crit</li>
+			<li>1st-Utah City Criterium, Ogden</li>
+		</ul>
+	</div>
+</div>
+
+<div id="hunterHuffmanBio" class="teamBio">
+	<div class="teamBioHeader">
+		<h4>Hunter Huffman</h4>
+		<a class="modal_close"></a>
+	</div>
+	<div class="teamBioBody">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget nisi et enim bibendum fermentum. Duis semper ligula ut dolor facilisis, id blandit nisi cursus. Pellentesque libero metus, convallis a nunc eu, placerat fermentum orci. Duis tincidunt metus eget scelerisque lobortis. Nunc nibh velit, euismod nec sapien tincidunt, consectetur condimentum ipsum. Curabitur turpis mi, facilisis nec sapien eu, egestas mollis orci. Ut dapibus accumsan massa, ac tempus lectus consectetur eu. Nam massa enim, interdum nec sagittis accumsan, dictum nec arcu. Quisque dui erat, eleifend sed arcu eu, tristique pulvinar urna.</p>
+	</div>
+</div>
+
+<div id="leonBergantBio" class="teamBio">
+	<div class="teamBioHeader">
+		<h4>Leon Bergant</h4>
+		<a class="modal_close"></a>
+	</div>
+	<div class="teamBioBody">
+		<p>Leon is from Slovenia, and is an Elite Master’s racer. As a former Slovenian National Champion and winner of World Cup – Austria he brings a wealth of racing knowledge from the highest levels of the sport. He retired from cycling for nearly a decade while he established his family and a career as a commercial pilot. When he returned to the sport, his success was inevitable. As a relatively unknown rider he set the course record for LOTOJA Classic, the United States longest one-day sanctioned races at 206 miles.  He continued to have many great wins throughout the next two seasons and became the Top Elite (Pro/CAT1/2) rider in the state of Utah for 2013 – based on UCA points’ series. Naturally his Google search score increased quickly, due to many local cyclists researching why this unknown rider was crushing many hometown heroes in Utah races. Leon is truly a treasured resource to the team because of the knowledge and support he can bring to the younger riders on the team.</p>
+		<p>Top Career Highlights:</p>
+		<ul>
+			<li>1st-1997 Slovenian National Champion</li>
+			<li>1st- 2013 Bear Lake Road Race</li>
+			<li>1st-2013 East Canyon Road Race</li>
+		</ul>
+	</div>
+</div>
+
+<div id="mannyCypersBio" class="teamBio">
+	<div class="teamBioHeader">
+		<h4>Manny Cypers</h4>
+		<a class="modal_close"></a>
+	</div>
+	<div class="teamBioBody">
+		<p>Manny is from Ogden, Utah. He is an Elite Masters racer, who made the transition to cycling from triathlon. As a multiple time qualifier for the Ironman World Championships, he leveraged his fitness and drive to become a competitive force in cycling. He is a family man who balances the racing lifestyle with home and work responsibilities.  Manny was a key component in the formation of the LiVe Well Elite Development Team, and continues to plan most of the race logistics for the development squad.</p>
+		<p>Top Career Highlights:</p>
+		<ul>
+			<li>1st-Valley of the Fire Criterium</li>
+			<li>2nd-Anderson and Banducci Twilight Criterium</li>
+			<li>World’s Qualifier-St. George 70.3 triathlon</li>
+		</ul>
+	</div>
+</div>
+
+<div id="rickyBangerterBio" class="teamBio">
+	<div class="teamBioHeader">
+		<h4>Ricky Bangerter</h4>
+		<a class="modal_close"></a>
+	</div>
+	<div class="teamBioBody">
+		<p>Ricky is born and raised in the Kaysville area, eventually deciding to buy his first road bike in 2010.  Ricky gained the trust of his teammates by being one of the most enthusiastic bike racers you will ever meet.  Always willing to do what it takes for the team to have success, it’s a pleasure to ride alongside him in the peloton as your teammate.</p>
+		<p>Career Highlights:</p>
+		<ul>
+			<li>1st-Salt Lake Valley B4Kids overall</li>
+			<li>1st-Salt Lake Valley B4Kids Time Trial</li>
+			<li>2nd-Hell of the North Road Race</li>
+		</ul>
+	</div>
+</div>
+
+<div id="gilbertDucournuaBio" class="teamBio">
+	<div class="teamBioHeader">
+		<h4>Gilbert Ducournua</h4>
+		<a class="modal_close"></a>
+	</div>
+	<div class="teamBioBody">
+		<p>Gilbert is a talented young cyclist from Venezuela.  He has raced the past couple seasons for the powerhouse Fort Lewis College cycling team who currently has the #1 ranked collegiate cycling program in the United States. He represented the team at Nationals several times. In addition, was selected for and represented his national team, Gobercion Monagas.  </p>
+	</div>
+</div>
+
+<div id="alisterRatcliffBio" class="teamBio">
+	<div class="teamBioHeader">
+		<h4>Alister Ratcliff</h4>
+		<a class="modal_close"></a>
+	</div>
+	<div class="teamBioBody">
+		<p>Alister is an extraordinarily talented and hard working cyclist from Newtown, CT. He attended Fort Lewis College, home of the top ranked cycling program, where in 2011 won the Collegiate Road Race and Omnium National Championships. In that same season he tallied 5 wins; including, the overall at the Tour of the Catskills.  In 2012 Alister crossed the pond where he raced as a domestique for Garmin Chipotle, one of the top development teams in the world.  After his debut season in Europe, he continued to ride for a Belgium Continental pro team, Team3M. During this time he gained vast racing and life experiences.</p>
+		<p>Top Career Highlights:</p>
+		<ul>
+			<li>1st 2014 Tour Del Sol Overall</li>
+			<li>16th-2013 Pino Cerami UCI 1.1</li>
+			<li>1st 2011 Collegiate Nationals RR and Omnium Champion</li>
+			<li>1st 2011 Tour of the Catskills Overall</li>
+		</ul>
+	</div>
+</div>
+
+<div id="bryceOlsenBio" class="teamBio">
+	<div class="teamBioHeader">
+		<h4>Bryce Olsen</h4>
+		<a class="modal_close"></a>
+	</div>
+	<div class="teamBioBody">
+		<p>Bryce is a Utah native who resided in the Netherlands for 2 years where the cycling scene was imprinted upon him. It was also during this time his heart fell in love with cyclocross racing.  Although naturally skilled for a cross race, Bryce also thrives on the road scene.  This year he started out with a bang, winning several races outright and moving up to the Pro/1/2 field. His calm attitude brings a good ambiance to the team during races. Bryce is known for a guy that loves to see his team win and is willing to blow up his own legs to ensure that happens.</p>
+		<p>Career Highlights:</p>
+		<ul>
+			<li>1st-Tour Del Sol TT, CRIT, &amp; G.C.</li>
+			<li>2nd-Lotoja Classic 2013</li>
+			<li>2nd-Colorado cross classic</li>
+			<li>5th-Boulder Cup Cross</li>
+		</ul>
+	</div>
+</div>
+
+<div id="bransonYantesBio" class="teamBio">
+	<div class="teamBioHeader">
+		<h4>Branson Yantes</h4>
+		<a class="modal_close"></a>
+	</div>
+	<div class="teamBioBody">
+		<p>Branson is a dedicated student athlete who has progressed rapidly through the categories of USA cycling.  Proving to win races in every category he has been a part of.  Most recently upgrading to the Pro 1,2 races he won his first ever criterium he took part in.  Soon, he will have earned enough upgrade points for his Category 1 upgrade and partake in NRC level races with the team in 2015.</p><p>Career Highlights:</p>
+		<ul>
+			<li>1st-Salt Lake Valley B4Kids Stage 1</li>
+			<li>1st-Tour Del Sol Stage 3</li>
+			<li>1st-Lotoja Classic (2012 &amp; 2013)</li>
+		</ul>
+	</div>
+</div>
+
+
+</body>
+</html>
